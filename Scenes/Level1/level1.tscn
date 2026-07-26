@@ -241,11 +241,14 @@ label_settings = ExtResource("4_vbvv5")
 custom_minimum_size = Vector2(450, 300)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 0
+scroll_deadzone = 10
 
 [node name="CreditsText" type="RichTextLabel" parent="CanvasLayer/MainScreen/CreditsContainer/HContainer/ScrollContainer" unique_id=1113631687]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 1
 bbcode_enabled = true
 fit_content = true
 autowrap_mode = 0
