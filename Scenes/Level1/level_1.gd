@@ -51,6 +51,11 @@ func _ready() -> void:
 	credits_label.bbcode_text = credits_text
 	pass # Replace with function body.
  
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("ui_accept"):
+		if event.is_pressed() and not started:
+			start_game()
+		
 func restart():
 	get_tree().reload_current_scene()
 	pass
@@ -89,8 +94,7 @@ func _credits_back_button_pressed():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not started and Input.is_action_just_pressed("ui_accept"):
-		start_game()
+	
 	if not started: 
 		return
 	move_camera(delta)
