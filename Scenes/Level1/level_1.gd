@@ -106,6 +106,7 @@ func start_game():
 
 	fade_out(main_screen)
 	main_menu.visible = false
+	credits.visible = false
 	started = true
 	camera_speed = 100.0
 	hud.modulate.a = 0.0
