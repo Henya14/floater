@@ -1,0 +1,339 @@
+[gd_scene format=4 uid="uid://n1r0ar117yhs"]
+
+[ext_resource type="Texture2D" uid="uid://da2icnpts6aav" path="res://Assets/Backgrounds/sky_clear.png" id="1_82hq2"]
+[ext_resource type="Script" uid="uid://bu4plcndptmo1" path="res://Scenes/Level1/level_1.gd" id="1_h4xxi"]
+[ext_resource type="Script" uid="uid://dry6j70374sim" path="res://Scenes/Level1/camera_2d.gd" id="1_tt6tg"]
+[ext_resource type="LabelSettings" uid="uid://bh788dh6ifsru" path="res://Assets/Labels/label_settings.tres" id="4_vbvv5"]
+[ext_resource type="FontFile" uid="uid://dphbdl8056430" path="res://Assets/Fonts/Rich Eatin'.otf" id="5_t78ky"]
+[ext_resource type="StyleBox" uid="uid://cvwmsg6eo8hk6" path="res://Assets/Styles/button_style.tres" id="6_dxbij"]
+[ext_resource type="PackedScene" uid="uid://dr75fi0yitfrh" path="res://Scenes/CloudsLayer/clouds_layer.tscn" id="6_k3vst"]
+[ext_resource type="StyleBox" uid="uid://dyu8ndbw6whgg" path="res://Assets/Styles/button_style_pressed.tres" id="7_yltys"]
+[ext_resource type="StyleBox" uid="uid://bgxdwyq3n6mu5" path="res://Assets/Styles/button_style_hover.tres" id="8_3rkmf"]
+[ext_resource type="PackedScene" uid="uid://3yd4t2rw0oa3" path="res://Scenes/Player/player.tscn" id="9_h4xxi"]
+[ext_resource type="Texture2D" uid="uid://bdiheec5w3bs5" path="res://Assets/TileSets/Platformer/platform_tileset_template_by_campestre.png" id="13_h4xxi"]
+[ext_resource type="PackedScene" uid="uid://c5mhrok3dvij8" path="res://Scenes/Hud/hud.tscn" id="14_k3vst"]
+
+[sub_resource type="Theme" id="Theme_dxbij"]
+default_font = ExtResource("5_t78ky")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3vst"]
+texture = ExtResource("13_h4xxi")
+margins = Vector2i(1, 1)
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010937, 16, 10.707352, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.533245, 16, 11.055557, 16, 16, -16, 16)
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010937, 16, 10.707352, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 11.926071, 16, 12.274281, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_30odb"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_k3vst")
+
+[node name="Level1" type="Node" unique_id=1178333312]
+script = ExtResource("1_h4xxi")
+camera_speed = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=359062285]
+script = ExtResource("1_tt6tg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=527404884]
+
+[node name="HUD" parent="CanvasLayer" unique_id=60597800 instance=ExtResource("14_k3vst")]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1665350514]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="CautionSignHolder" type="Control" parent="CanvasLayer/MarginContainer" unique_id=1176995262]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MainScreen" type="Control" parent="CanvasLayer" unique_id=1810815579]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CreditsContainer" type="MarginContainer" parent="CanvasLayer/MainScreen" unique_id=1419049428]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -219.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 100
+
+[node name="HContainer" type="VBoxContainer" parent="CanvasLayer/MainScreen/CreditsContainer" unique_id=605896501]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="CreditsMainLabel" type="Label" parent="CanvasLayer/MainScreen/CreditsContainer/HContainer" unique_id=5773402]
+layout_mode = 2
+text = "Credits"
+label_settings = ExtResource("4_vbvv5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MainScreen/CreditsContainer/HContainer" unique_id=1004633352]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreditsText" type="Label" parent="CanvasLayer/MainScreen/CreditsContainer/HContainer/ScrollContainer" unique_id=122471502]
+layout_mode = 2
+size_flags_vertical = 1
+text = "ASd adasd as d'
+
+asdas
+d
+asd
+asd
+sad
+asd
+as
+das
+das
+d
+asd
+asd
+asd
+"
+label_settings = ExtResource("4_vbvv5")
+
+[node name="CreditsBackButton" type="Button" parent="CanvasLayer/MainScreen/CreditsContainer/HContainer" unique_id=1924192823]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_dxbij")
+theme_override_fonts/font = ExtResource("5_t78ky")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_dxbij")
+theme_override_styles/pressed = ExtResource("7_yltys")
+theme_override_styles/hover = ExtResource("8_3rkmf")
+text = "Back"
+
+[node name="MainMenuContainer" type="MarginContainer" parent="CanvasLayer/MainScreen" unique_id=1847939771]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -29.0
+offset_bottom = 29.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+
+[node name="HContainer" type="VBoxContainer" parent="CanvasLayer/MainScreen/MainMenuContainer" unique_id=1608427438]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="StartLabel" type="Label" parent="CanvasLayer/MainScreen/MainMenuContainer/HContainer" unique_id=1727998393]
+layout_mode = 2
+text = "Press Space to Start"
+label_settings = ExtResource("4_vbvv5")
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MainScreen/MainMenuContainer/HContainer" unique_id=1909437583]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_dxbij")
+theme_override_fonts/font = ExtResource("5_t78ky")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_dxbij")
+theme_override_styles/pressed = ExtResource("7_yltys")
+theme_override_styles/hover = ExtResource("8_3rkmf")
+text = "Credits"
+
+[node name="SkyLayer" type="Parallax2D" parent="." unique_id=1428850786]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 648)
+autoscroll = Vector2(-10, 0)
+
+[node name="Sky" type="TextureRect" parent="SkyLayer" unique_id=1211987670]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+texture = ExtResource("1_82hq2")
+flip_v = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1979333319]
+tile_map_data = PackedByteArray("AAAAABEAAAAAAAEAAAAAABIAAAAAAAIAAAAAABMAAAAAAAIAAAABABIAAAACAAIAAAACABIAAAACAAIAAAADABIAAAACAAIAAAAEABIAAAACAAIAAAADABMAAAACAAIAAAACABMAAAACAAIAAAABABMAAAACAAIAAAAAABQAAAAAAAMAAAABABQAAAABAAMAAAACABQAAAABAAMAAAADABQAAAAEAAMAAAACABEAAAAEAAEAAAADABEAAAABAAEAAAAEABEAAAABAAEAAAABABEAAAABAAEAAAAEABMAAAACAAIAAAAEABQAAAAEAAMAAAAFABMAAAACAAIAAAAFABQAAAABAAMAAAAGABIAAAACAAIAAAAGABMAAAADAAIAAAAGABQAAAAEAAMAAAAHABMAAAACAAIAAAAHABQAAAABAAMAAAAFABEAAAABAAEAAAAGABEAAAABAAEAAAAHABEAAAAEAAEAAAAHABIAAAACAAIAAAAIABQAAAAEAAMAAAAAABAAAAABAAAAAAAFABAAAAAAAAAAAAAGABAAAAAEAAAAAAAHABAAAAABAAAAAAAEABAAAAAFAAAAAAADABAAAAAAAAAAAAACABAAAAAFAAAAAAABABAAAAABAAAAAAAIABEAAAAEAAEAAAAFABIAAAACAAIAAAAJABQAAAAEAAMAAAAKABQAAAAFAAMAAAAKABMAAAAFAAIAAAAKABEAAAAFAAEAAAAKABIAAAAFAAIAAAAJABEAAAAEAAEAAAAJABIAAAAEAAIAAAAIABIAAAAEAAIAAAAIABMAAAACAAIAAAAJABMAAAACAAIAAAAIABAAAAAEAAAAAAAJABAAAAAEAAAAAAAKABAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_30odb")
+
+[node name="Clouds Layer" parent="." unique_id=660961032 node_paths=PackedStringArray("camera") instance=ExtResource("6_k3vst")]
+camera = NodePath("../Camera2D")
+
+[node name="Player" parent="." unique_id=1969102568 node_paths=PackedStringArray("camera") instance=ExtResource("9_h4xxi")]
+position = Vector2(297, 426)
+camera = NodePath("../Camera2D")
+
+[node name="PickUpTimer" type="Timer" parent="." unique_id=624764859]
+wait_time = 5.0
+
+[node name="DangerTimer" type="Timer" parent="." unique_id=1773225156]
+
+[node name="PickUpContainer" type="Node" parent="." unique_id=1383716442]
+
+[node name="DangerContainer" type="Node" parent="." unique_id=770771231]
+
+[node name="Clouds Layer2" parent="." unique_id=448496739 node_paths=PackedStringArray("camera") instance=ExtResource("6_k3vst")]
+camera = NodePath("../Camera2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=193491932]
+
+[connection signal="timeout" from="PickUpTimer" to="." method="_on_pick_up_timer_timeout"]
+[connection signal="timeout" from="DangerTimer" to="." method="_on_danger_timer_timeout"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://csi5a1qyc6cpy"]
+
+[ext_resource type="Script" uid="uid://b02mpxhdjjvr7" path="res://Scenes/AnimatedSpriteArray/animated_sprite_array.gd" id="1_c3r0e"]
+
+[node name="Animation" type="Node2D" unique_id=1581603825]
+script = ExtResource("1_c3r0e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=381746423]

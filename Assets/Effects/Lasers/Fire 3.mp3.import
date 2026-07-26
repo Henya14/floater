@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmbyusqk66gke"
+path="res://.godot/imported/Fire 3.mp3-c3bce4933ec280abe9f2a4c4eaadeb0e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Effects/Lasers/Fire 3.mp3"
+dest_files=["res://.godot/imported/Fire 3.mp3-c3bce4933ec280abe9f2a4c4eaadeb0e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

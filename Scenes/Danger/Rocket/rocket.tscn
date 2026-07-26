@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cm6h231128wdl"]
+
+[ext_resource type="PackedScene" uid="uid://ctgp5co3wkhw" path="res://Scenes/DamageBox/damage_box.tscn" id="1_82m3h"]
+[ext_resource type="Texture2D" uid="uid://cxemhupebn2ol" path="res://Assets/Textures/Enemy/Rocket/spr_missile.png" id="2_4a14t"]
+[ext_resource type="PackedScene" uid="uid://daeyhw0b6shgp" path="res://Scenes/MovementComponent/movement_component.tscn" id="3_utr6d"]
+[ext_resource type="Texture2D" uid="uid://bkpslbp0ewjob" path="res://Assets/Textures/Particles/square_particle.png" id="4_211sb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4a14t"]
+radius = 6.0
+height = 55.0
+
+[sub_resource type="Gradient" id="Gradient_211sb"]
+colors = PackedColorArray(0.99999994, 0.6214243, 0.15857327, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_35idf"]
+gradient = SubResource("Gradient_211sb")
+
+[sub_resource type="Curve" id="Curve_35idf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_211sb"]
+curve = SubResource("Curve_35idf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_35idf"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 20.0
+initial_velocity_max = 100.0
+gravity = Vector3(98, 0, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_211sb")
+color_ramp = SubResource("GradientTexture1D_35idf")
+
+[node name="Rocket" type="Node2D" unique_id=1802826840]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1229991588]
+rotation = 3.1415925
+texture = ExtResource("2_4a14t")
+
+[node name="DamageBox" parent="." unique_id=953982578 instance=ExtResource("1_82m3h")]
+rotation = 1.5707964
+collision_layer = 8
+collision_mask = 2
+shape = SubResource("CapsuleShape2D_4a14t")
+
+[node name="MovementComponent" parent="." unique_id=998723629 instance=ExtResource("3_utr6d")]
+speed_x = 1000.0
+speed_y = 0.0
+bounce_y = false
+moving_upward = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=174474863]
+position = Vector2(35, 0)
+amount = 32
+texture = ExtResource("4_211sb")
+speed_scale = 2.0
+randomness = 0.1
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_35idf")

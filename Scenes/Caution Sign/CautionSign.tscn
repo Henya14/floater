@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dps7ojnoqjob4"]
+
+[ext_resource type="Script" uid="uid://dqsiwxu7ruwwv" path="res://Scenes/Caution Sign/caution_sign.gd" id="1_3cj7d"]
+[ext_resource type="Texture2D" uid="uid://d2lddwc0fvgy2" path="res://Assets/Textures/Caution Sign/caution_atlas.png" id="1_a8w1f"]
+[ext_resource type="AudioStream" uid="uid://b4iiu0beqkr0i" path="res://Assets/Effects/2 - 7 Space Sounds.mp3" id="3_7gjqi"]
+
+[sub_resource type="Animation" id="Animation_a8w1f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3cj7d"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gjqi"]
+_data = {
+&"RESET": SubResource("Animation_a8w1f"),
+&"idle": SubResource("Animation_3cj7d")
+}
+
+[node name="CautionSign" type="Control" unique_id=1009744577]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_3cj7d")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=304392560]
+texture = ExtResource("1_a8w1f")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=929557668]
+libraries/ = SubResource("AnimationLibrary_7gjqi")
+autoplay = &"idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=627519021]
+process_mode = 3
+stream = ExtResource("3_7gjqi")
+volume_db = -5.0
+autoplay = true

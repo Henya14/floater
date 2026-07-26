@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bh788dh6ifsru"]
+
+[ext_resource type="FontFile" uid="uid://dphbdl8056430" path="res://Assets/Fonts/Rich Eatin'.otf" id="1_aw5ah"]
+
+[resource]
+font = ExtResource("1_aw5ah")
+font_size = 36

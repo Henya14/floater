@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4iiu0beqkr0i"
+path="res://.godot/imported/2 - 7 Space Sounds.mp3-c5d5f6ec96bac2ad504ab701bc2808fa.mp3str"
+
+[deps]
+
+source_file="res://Assets/Effects/2 - 7 Space Sounds.mp3"
+dest_files=["res://.godot/imported/2 - 7 Space Sounds.mp3-c5d5f6ec96bac2ad504ab701bc2808fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

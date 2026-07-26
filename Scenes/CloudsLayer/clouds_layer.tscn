@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dr75fi0yitfrh"]
+
+[ext_resource type="Script" uid="uid://d2j4b2t25g4ih" path="res://Scenes/Level1/clouds.gd" id="1_qcvux"]
+[ext_resource type="Texture2D" uid="uid://732450vpqhfh" path="res://Assets/Backgrounds/Clouds/lightningcloud1.png" id="2_51p3f"]
+[ext_resource type="Texture2D" uid="uid://3rc4ayhust44" path="res://Assets/Backgrounds/Clouds/lightningcloud2.png" id="3_axl0x"]
+[ext_resource type="Texture2D" uid="uid://bkyh4a0x1r1t" path="res://Assets/Backgrounds/Clouds/lightningcloud3.png" id="4_1txnr"]
+[ext_resource type="Texture2D" uid="uid://dwfelu0qw4264" path="res://Assets/Backgrounds/Clouds/clouds1.png" id="5_hhch1"]
+[ext_resource type="Texture2D" uid="uid://csfetqy74y3km" path="res://Assets/Backgrounds/Clouds/clouds2.png" id="6_fio6y"]
+[ext_resource type="Texture2D" uid="uid://to3eqwucu55k" path="res://Assets/Backgrounds/Clouds/clouds3.png" id="7_dev6y"]
+
+[node name="Clouds Layer" type="Parallax2D" unique_id=660961032 node_paths=PackedStringArray("camera")]
+scroll_scale = Vector2(0.3, 0.3)
+script = ExtResource("1_qcvux")
+camera = NodePath("")
+cloud_textures = Array[Texture2D]([ExtResource("2_51p3f"), ExtResource("3_axl0x"), ExtResource("4_1txnr"), ExtResource("5_hhch1"), ExtResource("6_fio6y"), ExtResource("7_dev6y")])
+max_cloud_scale = 0.8
+max_drift_speed = 200.0
+max_clouds = 20.0

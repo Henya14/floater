@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://n1r0ar117yhs"]
+
+[ext_resource type="Script" uid="uid://bi4jriyx0fxh7" path="res://Scenes/Level1/player.gd" id="1_4tqg8"]
+[ext_resource type="Texture2D" uid="uid://da2icnpts6aav" path="res://Assets/Backgrounds/sky_clear.png" id="1_82hq2"]
+[ext_resource type="Script" uid="uid://dry6j70374sim" path="res://Scenes/Level1/camera_2d.gd" id="1_tt6tg"]
+[ext_resource type="Texture2D" uid="uid://732450vpqhfh" path="res://Assets/Backgrounds/Clouds/lightningcloud1.png" id="3_0i58j"]
+[ext_resource type="Script" uid="uid://d2j4b2t25g4ih" path="res://Scenes/Level1/clouds.gd" id="3_4v6hc"]
+[ext_resource type="Texture2D" uid="uid://3rc4ayhust44" path="res://Assets/Backgrounds/Clouds/lightningcloud2.png" id="4_4v6hc"]
+[ext_resource type="Texture2D" uid="uid://bkyh4a0x1r1t" path="res://Assets/Backgrounds/Clouds/lightningcloud3.png" id="5_vbvv5"]
+[ext_resource type="Texture2D" uid="uid://dwfelu0qw4264" path="res://Assets/Backgrounds/Clouds/clouds1.png" id="7_dxbij"]
+[ext_resource type="PackedScene" uid="uid://csi5a1qyc6cpy" path="res://Scenes/AnimatedSpriteArray/AnimatedSpriteArray.tscn" id="8_3rkmf"]
+[ext_resource type="Texture2D" uid="uid://csfetqy74y3km" path="res://Assets/Backgrounds/Clouds/clouds2.png" id="8_yltys"]
+[ext_resource type="Texture2D" uid="uid://to3eqwucu55k" path="res://Assets/Backgrounds/Clouds/clouds3.png" id="9_3rkmf"]
+[ext_resource type="Texture2D" uid="uid://ev8pvuulmd5s" path="res://Assets/Textures/Balloon/balloon.png" id="9_h4xxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30odb"]
+size = Vector2(61, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t3ym"]
+size = Vector2(179, 20)
+
+[node name="Level1" type="Node" unique_id=1178333312]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=359062285]
+script = ExtResource("1_tt6tg")
+
+[node name="SkyLayer" type="Parallax2D" parent="." unique_id=1428850786]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 648)
+autoscroll = Vector2(-10, 0)
+
+[node name="Sky" type="TextureRect" parent="SkyLayer" unique_id=1211987670]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+texture = ExtResource("1_82hq2")
+flip_v = true
+
+[node name="Clouds Layer1" type="Parallax2D" parent="." unique_id=148489874]
+scroll_scale = Vector2(0.3, 0.3)
+script = ExtResource("3_4v6hc")
+cloud_textures = Array[Texture2D]([ExtResource("3_0i58j"), ExtResource("4_4v6hc"), ExtResource("5_vbvv5")])
+min_cloud_scale = null
+max_cloud_scale = 0.8
+min_drift_speed = null
+max_drift_speed = 200.0
+max_clouds = 20.0
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1376769574]
+position = Vector2(70, 326)
+script = ExtResource("1_4tqg8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1473740157]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_30odb")
+
+[node name="Animation" parent="Player" unique_id=1581603825 instance=ExtResource("8_3rkmf")]
+texture = ExtResource("9_h4xxi")
+frames_per_second = 2.0
+
+[node name="Clouds Layer2" type="Parallax2D" parent="." unique_id=711303733]
+scroll_scale = Vector2(0.7, 0.7)
+script = ExtResource("3_4v6hc")
+cloud_textures = Array[Texture2D]([ExtResource("7_dxbij"), ExtResource("8_yltys"), ExtResource("9_3rkmf")])
+min_cloud_scale = null
+max_cloud_scale = null
+min_drift_speed = 200.0
+max_drift_speed = null
+max_clouds = null
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=295539954]
+position = Vector2(-104, 474)
+scale = Vector2(9.925747, -3.9991229)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=418191042]
+position = Vector2(79.5, 0)
+shape = SubResource("RectangleShape2D_7t3ym")

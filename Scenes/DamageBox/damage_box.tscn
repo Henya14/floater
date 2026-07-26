@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ctgp5co3wkhw"]
+
+[ext_resource type="Script" uid="uid://cxp6yoxw7hb72" path="res://Scenes/DamageBox/damage_box.gd" id="1_42syr"]
+
+[node name="DamageBox" type="Area2D" unique_id=953982578]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_42syr")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=149588314]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

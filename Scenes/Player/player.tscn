@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://3yd4t2rw0oa3"]
+
+[ext_resource type="Script" uid="uid://bi4jriyx0fxh7" path="res://Scenes/Level1/player.gd" id="1_xpcdj"]
+[ext_resource type="PackedScene" uid="uid://csi5a1qyc6cpy" path="res://Scenes/AnimatedSpriteArray/AnimatedSpriteArray.tscn" id="2_mtuoh"]
+[ext_resource type="Texture2D" uid="uid://ev8pvuulmd5s" path="res://Assets/Textures/Balloon/balloon.png" id="3_htcer"]
+[ext_resource type="Texture2D" uid="uid://bax7x8csa4454" path="res://Assets/Textures/Balloon/ballon_atlas.tres" id="4_mtuoh"]
+[ext_resource type="PackedScene" uid="uid://dic6npjvqp4tu" path="res://Scenes/HurtBox/hurt_box.tscn" id="5_htcer"]
+[ext_resource type="AudioStream" uid="uid://edsrbs8iepkk" path="res://Assets/Effects/Lasers/Fire 6.mp3" id="6_dd0ac"]
+[ext_resource type="AudioStream" uid="uid://cscxt10tuiif3" path="res://Assets/Effects/Fire/qubodupFireLoop.ogg" id="7_0u5uq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4v6hc"]
+radius = 28.71
+height = 221.12
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30odb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cr8k1"]
+radius = 53.0
+height = 224.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1969102568]
+collision_layer = 2
+script = ExtResource("1_xpcdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=144532683]
+shape = SubResource("CapsuleShape2D_4v6hc")
+
+[node name="Animation" parent="." unique_id=1581603825 instance=ExtResource("2_mtuoh")]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_htcer")
+frames_per_second = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Animation" unique_id=1576221162]
+scale = Vector2(2, 2)
+texture = ExtResource("4_mtuoh")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Animation" unique_id=1869522591]
+sprite_frames = SubResource("SpriteFrames_30odb")
+
+[node name="HurtBox" parent="." unique_id=933418913 instance=ExtResource("5_htcer")]
+collision_layer = 2
+collision_mask = 12
+shape = SubResource("CapsuleShape2D_cr8k1")
+
+[node name="HurtEffect" type="AudioStreamPlayer" parent="." unique_id=1473618881]
+process_mode = 3
+stream = ExtResource("6_dd0ac")
+
+[node name="BoosterEffect" type="AudioStreamPlayer" parent="." unique_id=765028516]
+stream = ExtResource("7_0u5uq")
+volume_db = -15.0
+
+[connection signal="current_health_changed" from="HurtBox" to="." method="_on_hurt_box_current_health_changed"]

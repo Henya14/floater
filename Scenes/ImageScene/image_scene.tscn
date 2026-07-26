@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c0c4iye5fix25"]
+
+[ext_resource type="Script" uid="uid://bgd8sc6yyi56j" path="res://Scenes/ImageScene/image_scene.gd" id="1_2brir"]
+[ext_resource type="Texture2D" uid="uid://duuoht3twsenr" path="res://Assets/Textures/Hearts/heart pixel art 64x64.png" id="1_q3hjv"]
+
+[node name="ImageScene" type="TextureRect" unique_id=981454223]
+texture = ExtResource("1_q3hjv")
+script = ExtResource("1_2brir")

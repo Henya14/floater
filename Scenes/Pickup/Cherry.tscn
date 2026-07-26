@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dhbkfd8p24mjl"]
+
+[ext_resource type="PackedScene" uid="uid://cnm2lexpc7n3v" path="res://Scenes/Pickup/Pickup.tscn" id="1_ojsg5"]
+[ext_resource type="Texture2D" uid="uid://dvum0o8eg0ljm" path="res://Assets/Textures/Pickups/red-cherry.png" id="2_pw8n7"]
+[ext_resource type="PackedScene" uid="uid://ctgp5co3wkhw" path="res://Scenes/DamageBox/damage_box.tscn" id="3_evmnk"]
+[ext_resource type="AudioStream" uid="uid://dnei5oodnwkaj" path="res://Assets/Effects/life_pickup.mp3" id="4_y0yu8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw5ah"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0yu8"]
+size = Vector2(49, 40)
+
+[node name="Pickup" unique_id=990652885 instance=ExtResource("1_ojsg5")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=642372695]
+shape = SubResource("RectangleShape2D_aw5ah")
+
+[node name="TextureRect" parent="." index="1" unique_id=310830410]
+pivot_offset = Vector2(45, 19)
+texture = ExtResource("2_pw8n7")
+
+[node name="DamageBox" parent="." index="4" unique_id=953982578 instance=ExtResource("3_evmnk")]
+collision_layer = 4
+collision_mask = 1
+damage_amount = -1
+shape = SubResource("RectangleShape2D_y0yu8")
+
+[node name="AudioEffect" parent="." index="5" unique_id=1371024858]
+stream = ExtResource("4_y0yu8")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1gsmbjndbk32"
+path="res://.godot/imported/Misc Lasers.mp3-bffd32235c3bae29a4f61ca258837713.mp3str"
+
+[deps]
+
+source_file="res://Assets/Effects/Lasers/Misc Lasers.mp3"
+dest_files=["res://.godot/imported/Misc Lasers.mp3-bffd32235c3bae29a4f61ca258837713.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
